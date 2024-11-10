@@ -1,0 +1,28 @@
+🦸‍♀️Michito al rescate🦸
+
+Aquí estoy para ayudarte, mira:
+
+*Generar estrellas y constelaciones🌟🌌:*
+Puedes ver un gráfico de todas las estrellas disponibles con el comando /estrella , se te mostrará una imagen y un archivo HTML que puedes abrir en tu navegador de confianza🙀, este contiene el mismo gráfico de la imagen, con la diferencia que es interactivo, puedes hacer zoom, moverte libremente y ver el nombre e información como identificador Henry Draper (HD), identificador Harvard Revised Number (HR) y brillo de cada estrella✨.
+
+Para generar una constelacion utiliza el comando /constelaciones , luego elige uno de los comandos que se te muestran y disfruta de una experiencia como el gráfico de las estrellas, imagen y HTML. Si prefieres puedes ejecutar directamente uno de estos comandos: 
+/boyero
+/casiopea
+/cazo
+/cygnet
+/geminis
+/hydra
+/osa_mayor
+/osa_menor
+Y obtendras directamente el gráfico de una constelación directamente.
+
+
+*Resolver una relación de recurrencia lineal, no homogénea, con coeficientes constantes 🤓:
+*Utiliza el comando /rrnh y luego responde las preguntas correspondientes a los datos del problema, lo que debes responder son números o números separados por comas (se te indicará). Dado el caso que no ingreses una respuesta válida se te seguirá preguntando hasta que respondas correctamente. 
+Luego de responder las preguntas se te mostrará la respuesta detallada a tu problema en forma de imágenes y gualá🧙‍♂️✨
+
+
+Si te pierdes en algún momento y no sabes que hacer usa el comando /help y de inmediato te muestros estas instrucciones. O usa /commands para recordarte los comandos que existen😽
+
+
+_NOTA: Todos los archivos que te muestro son 100% confiables, no temas😽_

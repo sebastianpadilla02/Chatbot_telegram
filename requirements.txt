@@ -1,0 +1,7 @@
+bokeh
+selenium
+python-telegram-bot
+IPython
+sympy
+matplotlib
+pyTelegramBotAPI

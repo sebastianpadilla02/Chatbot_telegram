@@ -1,0 +1,14 @@
+/start - Inicia el bot
+/help - Ayuda
+/commands - Mostrar los comandos disponibles
+/estrella - Mostrar todas las estrellas, tambien puedes escribir "estrella"
+/constelaciones - Mostrar las constelaciones disponibles, también puedes escribir "constelaciones"
+/boyero - Mostrar constelación Boyero
+/casiopea - Mostrar constelación Casiopea 
+/cazo - Mostrar constelación Cazo
+/cygnet - Mostrar constelación Cygnet
+/geminis - Mostrar constelación Geminis
+/hydra - Mostrar constelación Hydra
+/osa_mayor - Mostrar constelación Osa mayor
+/osa_menor - Mostrar constelación Osa menor
+/rrnh - Solucionar una relacion de recurrencia lineal, no homogénea, con coeficientes constantes
