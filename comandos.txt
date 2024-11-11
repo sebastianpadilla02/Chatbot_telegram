@@ -3,5 +3,5 @@
 /commands - Mostrar los comandos disponibles
 /emergencia - Reportar una emergencia (hurto, violencia, homicidio, etc.) también puedes escribir "emergencia", "sos", "ayuda", "necesito ayuda".
 /contactos - Números y contactos de emergencia (policía, línea de atención a víctimas, etc.).
-/red_de_apoyo - Lista de organizaciones o servicios de apoyo para víctimas de inseguridad.
+/redes_apoyo - Lista de organizaciones o servicios de apoyo para víctimas de inseguridad.
 /recomendaciones - Te podemos recomendar algo dependiendo por lo que estes pasando.
