@@ -1,33 +1,112 @@
 {
     "1. Emergencias relacionadas con delitos": {
-        "Hurto o robo": "Mantén la calma, no resistas si tu vida está en peligro. Observa detalles del agresor y repórtalo a la policía.",
-        "Homicidio o intento": "Aléjate del área y llama a emergencias. Si es seguro, preserva la escena sin intervenir.",
-        "Acoso callejero o sexual": "Busca un lugar concurrido o pide ayuda inmediata. Documenta lo sucedido si es posible.",
-        "Secuestro": "Observa detalles útiles si eres testigo. Si eres víctima, mantén la calma y busca oportunidades para alertar.",
-        "Violencia intrafamiliar": "Si estás en peligro, busca un lugar seguro y llama a las autoridades.",
-        "Vandalismo": "No enfrentes a los responsables. Documenta lo sucedido y notifícalo a las autoridades.",
-        "Extorsión": "No cedas a las amenazas. Guarda las comunicaciones y denúncialas a la policía."
+        "Hurto o robo": [
+            "Mantén la calma, no resistas si tu vida está en peligro.",
+            "Observa detalles del agresor (ropa, dirección de huida).",
+            "Repórtalo a la policía inmediatamente."
+        ],
+        "Homicidio o intento": [
+            "Aléjate del área y llama a emergencias.",
+            "Si es seguro, preserva la escena sin intervenir.",
+            "Proporciona toda la información posible a las autoridades."
+        ],
+        "Acoso callejero o sexual": [
+            "Busca un lugar concurrido o pide ayuda inmediata.",
+            "Documenta lo sucedido si es posible.",
+            "Denuncia el acoso a las autoridades competentes."
+        ],
+        "Secuestro": [
+            "Observa detalles útiles si eres testigo (vehículo, ubicación).",
+            "Si eres víctima, mantén la calma y busca oportunidades para alertar.",
+            "Contacta a la policía o línea de emergencias de inmediato."
+        ],
+        "Violencia intrafamiliar": [
+            "Si estás en peligro, busca un lugar seguro.",
+            "Llama a las autoridades o líneas de ayuda contra la violencia.",
+            "Contacta a organizaciones que ofrezcan refugio o asistencia."
+        ],
+        "Vandalismo": [
+            "No enfrentes a los responsables para evitar riesgos.",
+            "Documenta lo sucedido (fotos, videos).",
+            "Notifícalo a las autoridades o al propietario afectado."
+        ],
+        "Extorsión": [
+            "No cedas a las amenazas ni entregues dinero.",
+            "Guarda las comunicaciones para evidencia.",
+            "Denúncialas a la policía especializada en delitos cibernéticos."
+        ]
     },
     "2. Emergencias relacionadas con violencia": {
-        "Peleas": "No te involucres. Llama a las autoridades y mantente a salvo.",
-        "Agresión con armas": "Si eres víctima, busca un lugar seguro. Si eres testigo, reporta de inmediato.",
-        "Disturbios públicos": "Evita involucrarte y busca un lugar seguro.",
-        "Violencia de género": "Busca ayuda inmediata y contacta organizaciones especializadas."
+        "Peleas": [
+            "No te involucres y mantén una distancia segura.",
+            "Llama a las autoridades para intervenir.",
+            "Proporciona detalles claros del incidente (ubicación, personas)."
+        ],
+        "Agresión con armas": [
+            "Busca un lugar seguro para protegerte.",
+            "Llama a emergencias de inmediato.",
+            "Si es posible, anota detalles del agresor o el arma utilizada."
+        ],
+        "Disturbios públicos": [
+            "Evita involucrarte y busca un lugar seguro lejos de la multitud.",
+            "Si estás atrapado, mantén la calma y sigue las indicaciones de las autoridades.",
+            "No participes en acciones que puedan agravar la situación."
+        ],
+        "Violencia de género": [
+            "Busca ayuda inmediata y contacta organizaciones especializadas.",
+            "Llama a la policía si tu vida está en peligro.",
+            "Habla con alguien de confianza para apoyo emocional."
+        ]
     },
     "3. Emergencias de seguridad pública": {
-        "Actividad sospechosa": "Reporta comportamientos extraños con descripciones precisas.",
-        "Personas desaparecidas": "Notifica a las autoridades y difunde la información si es seguro.",
-        "Vehículo robado": "Proporciona detalles como matrícula y modelo a la policía.",
-        "Trata de personas": "Reporta comportamientos sospechosos a líneas especializadas."
+        "Actividad sospechosa": [
+            "Reporta comportamientos extraños con descripciones precisas.",
+            "Evita confrontar a personas sospechosas directamente.",
+            "Contacta a la policía o seguridad local."
+        ],
+        "Personas desaparecidas": [
+            "Notifica a las autoridades lo antes posible.",
+            "Proporciona detalles como ropa, última ubicación y características físicas.",
+            "Comparte la información en redes sociales si es apropiado."
+        ],
+        "Vehículo robado": [
+            "Proporciona detalles como matrícula, modelo y color del vehículo.",
+            "Denuncia el robo a la policía local de inmediato.",
+            "Revisa cámaras cercanas o dispositivos GPS, si están disponibles."
+        ],
+        "Trata de personas": [
+            "Reporta comportamientos sospechosos a líneas especializadas.",
+            "Proporciona detalles de lugares o vehículos relacionados.",
+            "Evita enfrentamientos directos y prioriza tu seguridad."
+        ]
     },
     "4. Emergencias sociales o comunitarias": {
-        "Desalojos forzados": "Busca asistencia legal y documenta lo sucedido.",
-        "Niños en peligro": "Llama a protección infantil y mantén al menor a salvo."
+        "Desalojos forzados": [
+            "Busca asistencia legal para proteger tus derechos.",
+            "Documenta lo sucedido con fotos o videos.",
+            "Contacta a organizaciones de derechos humanos locales."
+        ],
+        "Niños en peligro": [
+            "Llama a protección infantil o líneas de emergencia locales.",
+            "Asegúrate de que el menor esté en un lugar seguro.",
+            "Proporciona toda la información posible a las autoridades."
+        ]
     },
     "5. Emergencias relacionadas con animales": {
-        "Ataque de animales": "Busca refugio y llama a control animal.",
-        "Maltrato animal": "Documenta el caso y contacta a organizaciones de protección animal.",
-        "Animal peligroso": "No intentes capturarlo. Reporta a control animal."
+        "Ataque de animales": [
+            "Busca refugio en un lugar seguro.",
+            "Evita movimientos bruscos que puedan provocar al animal.",
+            "Llama a control animal o emergencias veterinarias."
+        ],
+        "Maltrato animal": [
+            "Documenta el caso con fotos o videos sin exponerte al peligro.",
+            "Contacta a organizaciones de protección animal.",
+            "Denuncia el incidente a las autoridades competentes."
+        ],
+        "Animal peligroso": [
+            "No intentes capturarlo o acercarte al animal.",
+            "Llama a control animal para que intervenga.",
+            "Avisa a las personas cercanas sobre el peligro."
+        ]
     }
-
 }

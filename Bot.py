@@ -132,7 +132,7 @@ def recomendaciones(message):
         for category, emergencies in data.items():
             response += f"🔷 *{category}*\n"
             for subcategory, recommendation in emergencies.items():
-                response += f"  🔹 *{subcategory}:* {recommendation}\n"
+                response += f"  🔹 *{subcategory}:* {recommendation[0]}\n"
             response += "\n"
         
         bot.send_message(message.chat.id, response, parse_mode="Markdown")
@@ -157,7 +157,9 @@ def recomendaciones_2(message):
 
     response = "🛡️ *Recomendaciones* 🛡️\n\n"
     value = data[categoria][subcategoria]
-    response += value
+
+    for a in value:
+        response += a + "\n"
 
     bot.send_message(message.chat.id, response, parse_mode="Markdown")
 
