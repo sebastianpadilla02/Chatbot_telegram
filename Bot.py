@@ -3,7 +3,7 @@ import json
 from telebot import types
 
 #token del bot
-bot = telebot.TeleBot("8072127932:AAFDYSiwbe6whTvcREdsTYbN_A6JNVRzztM")
+bot = telebot.TeleBot("7598259933:AAGamRAGqKBSzg4GlmP4xH1xjKlpblkmEcg")
 tipo_de_emergencia = 0
 categoria = ""
 subcategoria = ""
