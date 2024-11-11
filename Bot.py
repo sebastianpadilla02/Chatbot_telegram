@@ -1,12 +1,31 @@
 import telebot
 import json
 from telebot import types
+import os
+from flask import Flask, request
 
 #token del bot
 bot = telebot.TeleBot("8072127932:AAFDYSiwbe6whTvcREdsTYbN_A6JNVRzztM")
+
+# Flask para manejar solicitudes
+app = Flask(__name__)
+
+#Variables globales
 tipo_de_emergencia = 0
 categoria = ""
 subcategoria = ""
+
+# Rutas de Flask para el webhook
+@app.route(f"/{"8072127932:AAFDYSiwbe6whTvcREdsTYbN_A6JNVRzztM"}", methods=["POST"])
+def webhook():
+    json_str = request.get_data().decode("UTF-8")
+    update = telebot.types.Update.de_json(json_str)
+    bot.process_new_updates([update])
+    return "OK", 200
+
+@app.route("/")
+def index():
+    return "Bot is running!"
 
 # Manejador del comando "/start"
 @bot.message_handler(commands=["start"])
@@ -173,4 +192,8 @@ def enviar_foto(id, src_pic, capt):
 def mensaje(message):
     emergencia(message)
 
-bot.polling()
+# Configuración del Webhook
+if __name__ == "__main__":
+    bot.remove_webhook()
+    bot.set_webhook(url=f"https://servertelegrambot-h2h6e8ascqdue9bq.canadacentral-01.azurewebsites.net.azurewebsites.net/{"8072127932:AAFDYSiwbe6whTvcREdsTYbN_A6JNVRzztM"}")
+    app.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
