@@ -16,8 +16,7 @@ Muestra esta guía con información detallada sobre cómo usar el bot y los coma
 Muestra una lista rápida de todos los comandos que puedes usar para resolver tus dudas o emergencias.
 
 🔹 **/emergencia**  
-Reporta una emergencia relacionada con inseguridad, como hurto, violencia o homicidio. También puedes activar este comando escribiendo directamente:  
-*"emergencia"*, *"sos"*, *"ayuda"* o *"necesito ayuda"*.  
+Reporta una emergencia relacionada con inseguridad, como hurto, violencia o homicidio. También puedes activar este comando escribiendo directamente cualquier cosa:  
 Te ayudaré a detallar tu situación y te guiaré sobre qué pasos tomar.
 
 🔹 **/contactos**  

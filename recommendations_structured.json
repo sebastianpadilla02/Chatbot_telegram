@@ -1,0 +1,33 @@
+{
+    "1. Emergencias relacionadas con delitos": {
+        "Hurto o robo": "Mantén la calma, no resistas si tu vida está en peligro. Observa detalles del agresor y repórtalo a la policía.",
+        "Homicidio o intento": "Aléjate del área y llama a emergencias. Si es seguro, preserva la escena sin intervenir.",
+        "Acoso callejero o sexual": "Busca un lugar concurrido o pide ayuda inmediata. Documenta lo sucedido si es posible.",
+        "Secuestro": "Observa detalles útiles si eres testigo. Si eres víctima, mantén la calma y busca oportunidades para alertar.",
+        "Violencia intrafamiliar": "Si estás en peligro, busca un lugar seguro y llama a las autoridades.",
+        "Vandalismo": "No enfrentes a los responsables. Documenta lo sucedido y notifícalo a las autoridades.",
+        "Extorsión": "No cedas a las amenazas. Guarda las comunicaciones y denúncialas a la policía."
+    },
+    "2. Emergencias relacionadas con violencia": {
+        "Peleas": "No te involucres. Llama a las autoridades y mantente a salvo.",
+        "Agresión con armas": "Si eres víctima, busca un lugar seguro. Si eres testigo, reporta de inmediato.",
+        "Disturbios públicos": "Evita involucrarte y busca un lugar seguro.",
+        "Violencia de género": "Busca ayuda inmediata y contacta organizaciones especializadas."
+    },
+    "3. Emergencias de seguridad pública": {
+        "Actividad sospechosa": "Reporta comportamientos extraños con descripciones precisas.",
+        "Personas desaparecidas": "Notifica a las autoridades y difunde la información si es seguro.",
+        "Vehículo robado": "Proporciona detalles como matrícula y modelo a la policía.",
+        "Trata de personas": "Reporta comportamientos sospechosos a líneas especializadas."
+    },
+    "4. Emergencias sociales o comunitarias": {
+        "Desalojos forzados": "Busca asistencia legal y documenta lo sucedido.",
+        "Niños en peligro": "Llama a protección infantil y mantén al menor a salvo."
+    },
+    "5. Emergencias relacionadas con animales": {
+        "Ataque de animales": "Busca refugio y llama a control animal.",
+        "Maltrato animal": "Documenta el caso y contacta a organizaciones de protección animal.",
+        "Animal peligroso": "No intentes capturarlo. Reporta a control animal."
+    }
+
+}

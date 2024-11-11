@@ -1,21 +1,21 @@
 import telebot
 from sympy import *
-from estrellas import estrellas, constelacion
-import RRNH 
+import json
+from telebot import types
 
 #token del bot
 bot = telebot.TeleBot("8072127932:AAFDYSiwbe6whTvcREdsTYbN_A6JNVRzztM")
 tipo_de_emergencia = 0
+categoria = ""
+subcategoria = ""
 
 # Manejador del comando "/start"
 @bot.message_handler(commands=["start"])
 def start(message):
-    # audio = open('media/bienvenido.mp3', 'rb')
-    # bot.send_audio(message.chat.id, audio)
-    # audio.close()
-    # photo = open("media/gato-baile.gif", 'rb')
-    # bot.send_animation(message.chat.id, photo)
-    # photo.close()
+    global categoria
+    global subcategoria
+    categoria = ""
+    subcategoria = ""
     bot.send_message(message.chat.id, "¡Hola! Soy tu bot de asistencia en emergencias relacionadas con inseguridad. Estoy aquí para ayudarte a actuar rápidamente en situaciones críticas. Usa /commands para ver lo que puedo hacer. Si es urgente, escribe directamente \"ayuda\" o usa el comando /emergencia.")
     enviar_foto(message.chat.id, "media/num_policia.png", "En caso de una llamada al cuadrante mas cercano vea /contactos para mas información")
     comandos(message)
@@ -41,8 +41,65 @@ def comandos(message):
 # Manejador del comando "/emergencia"
 @bot.message_handler(commands=["emergencia"])
 def emergencia(message):
+    markup = types.InlineKeyboardMarkup(row_width=1)
+
+    # Cargar el JSON desde un archivo
+    with open("recommendations_structured.json", "r", encoding="utf-8") as file:
+        emergencies = json.load(file)
+
+    btn = []
+    cont = 0
+    for key in emergencies.keys():
+        cont += 1
+        btn.append(types.InlineKeyboardButton(key, callback_data=f'emergencia_{cont}'))
+
+    markup.add(*btn)
+
+    response = "Por favor, elige la categoría de emergencia que presentas:"
+    bot.send_message(message.chat.id, response, reply_markup=markup)
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('emergencia_'))
+def emergencia_seleccionada(call):
+    global categoria
+    tipo_de_emergencia = int(call.data.split('_')[1])
+
+    with open("recommendations_structured.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    markup = types.InlineKeyboardMarkup(row_width=1)
+
+    keys = list(data.keys())
+    chosen_category = keys[tipo_de_emergencia - 1]
+    categoria = chosen_category
+    cont2 =0
+    btns = []
+    if chosen_category in data:
+        # Obtener las claves internas (subcategorías)
+        for key in data[chosen_category].keys():
+            cont2 += 1
+            btns.append(types.InlineKeyboardButton(key, callback_data=f'subcategoría_{cont2}'))
     
-    bot.send_message(message.chat.id, "¡Emergencia! ¿En qué puedo ayudarte?")
+    markup.add(*btns)
+
+    response = "Por favor, elige el tipo emergencia que presentas:"
+    bot.send_message(call.message.chat.id, response, reply_markup=markup)
+
+    # bot.send_message(call.message.chat.id, f"🛡️ **Emergencia seleccionada:** 🛡️\n{call.data.split('_')[1]} \nIngresa tu ubicación para poder ayudarte. 📍")
+    #bot.register_next_step_handler(call.message, ubicacion)
+
+@bot.callback_query_handler(func=lambda call: call.data.startswith('subcategoría_'))
+def subcategoria_seleccionada(call):
+    global categoria
+    global subcategoria
+    with open("recommendations_structured.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
+
+    subcategorias = list(data[categoria].keys())
+    chosen_subcategory = subcategorias[int(call.data.split('_')[1]) - 1]
+    subcategoria = chosen_subcategory
+
+    ubicacion(call.message)
+    #bot.send_message(call.message.chat.id, response)
 
 # Manejador del comando "/contactos"
 @bot.message_handler(commands=["contactos"])
@@ -65,170 +122,44 @@ def red_de_apoyo(message):
 # Manejador del comando "/recomendaciones"
 @bot.message_handler(commands=["recomendaciones"])
 def recomendaciones(message):
-    recomendaciones = ""
-    with open("recomendaciones.txt", "r", encoding="utf-8") as f:
-        for line in f:
-            recomendaciones += line
-    bot.reply_to(message, recomendaciones)
+    global categoria
+    with open("recommendations_structured.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
 
+    if(categoria == ""):
+        response = "🛡️ **Guía General de Emergencias** 🛡️\n\n"
 
-# Manejador del comando "/estrella"
-@bot.message_handler(commands=["estrella"])
-def estrella(message):
-    grafico_estrellas(message.chat.id)
-
-# Manejador del comando "/constelaciones"
-@bot.message_handler(commands=["constelaciones"])
-def constelaciones(message):
-    constelaciones_list = "/boyero\n/casiopea\n/cazo\n/cygnet\n/geminis\n/hydra\n/osa_mayor\n/osa_menor"
-    bot.reply_to(message, f"Elige una constelación 🌌: \n {constelaciones_list}")
-
-# Manejadores de los comandos para cada constelación
-@bot.message_handler(commands=["boyero"])
-def boyero(message):
-    grafico_constelacion("Boyero", message.chat.id)
-
-@bot.message_handler(commands=["casiopea"])
-def casiopea(message):
-    grafico_constelacion("Casiopea", message.chat.id)
-
-@bot.message_handler(commands=["cazo"])
-def cazo(message):
-    grafico_constelacion("Cazo", message.chat.id)
-
-@bot.message_handler(commands=["cygnet"])
-def cygnet(message):
-    grafico_constelacion("Cygnet", message.chat.id)
-
-@bot.message_handler(commands=["geminis"])
-def geminis(message):
-    grafico_constelacion("Geminis", message.chat.id)
-
-@bot.message_handler(commands=["hydra"])
-def hydra(message):
-    grafico_constelacion("Hydra", message.chat.id)
-
-@bot.message_handler(commands=["osa_mayor"])
-def osa_mayor(message):
-    grafico_constelacion("Osa mayor", message.chat.id)
-
-@bot.message_handler(commands=["osa_menor"])
-def osa_menor(message):
-    grafico_constelacion("Osa menor", message.chat.id)
-
-# Manejador del comando "/rrnh"
-@bot.message_handler(commands=["rrnh"])
-def rrnh(message):
-    bot.send_message(message.chat.id, "¿Cuál es el grado de la función recurrente?")
-    bot.register_next_step_handler(message, pedir_grado)
-
-# Manejador para obtener el grado de la función recurrente
-def pedir_grado(message):
-    try:
-        RRNH.k = int(message.text)
-        if RRNH.k <= 0:
-            bot.send_message(message.chat.id, "El grado debe ser mayor que 0😾, intenta de nuevo")
-            bot.register_next_step_handler(message, pedir_grado)
-        else:
-            bot.send_message(message.chat.id, "¿Qué tipo de termino no homogeneo es g(n)?🥸\n\t1. Constante\n\t2. Valor n\n\t3. Valor n^2 \n\t4. Raíz de grado n")
-            bot.register_next_step_handler(message, grado)
-    except ValueError:
-        bot.send_message(message.chat.id, "Ese tipo de dato no es correcto, miaw miaw! 😿\nIntenta de nuevo con un número")
-        rrnh(message)
-
-# Manejador para evaluar el tipo de término no homogéneo
-def grado(message):
-    try:
-        RRNH.dec_g = int(message.text)
-        if message.text=="1":
-            bot.send_message(message.chat.id, "¿Cuál es el valor de la constante?")
-            bot.register_next_step_handler(message, constante)
-        elif message.text == "2":
-            RRNH.g = RRNH.n
-            pedir_condiciones(message)
-        elif message.text == "3":
-            RRNH.g = RRNH.n**2
-            pedir_condiciones(message)
-        elif message.text == "4":
-            bot.send_message(message.chat.id, "¿Cuál es el valor de la raíz? 🤓")
-            bot.register_next_step_handler(message, valor_R)
-        else:
-            bot.send_message(message.chat.id, "Solo hay 4 opciones, selecciona una (escribe el número) 😾")
-            bot.register_next_step_handler(message, grado)
-    except ValueError:
-        bot.send_message(message.chat.id, "Ups, algo pasó con ese dato, intenta otra vez")
-        bot.register_next_step_handler(message, grado)
-    
-
-# Manejador para obtener el valor de la constante
-def constante(message):
-    try:
-        RRNH.g = int(message.text)
-        pedir_condiciones(message)
-    except ValueError:
-        bot.send_message(message.chat.id, "Ese tipo de dato no es correcto, miaw miaw! 😿\nIntenta de nuevo con un número")
-        bot.register_next_step_handler(message, constante)
-
-
-# Manejador para obtener el valor de R
-def valor_R(message):
-    try:
-        RRNH.R = int(message.text)
-        RRNH.g = RRNH.R**RRNH.n
-        pedir_condiciones(message)
-    except ValueError:
-        bot.send_message(message.chat.id, "Ese tipo de dato no es correcto, miaw miaw! 😿\nIntenta de nuevo con un número")
-        bot.register_next_step_handler(message, valor_R)
-
-# Manejador para obtener los coeficientes
-def pedir_coeficientes(message):
-    bot.send_message(message.chat.id, "¿Cuáles son los coeficientes de " + "".join("f(n -" + str(i) +"), " for i in range(RRNH.k, 1, -1)) + f" y f(n-1)? Ingresalos separados por comas.")
-    bot.register_next_step_handler(message, coeficientes)
-
-# Manejador de los coeficientes de la funcion y respuestas al usuario
-def coeficientes(message):
-    RRNH.coeff = []
-    check = true
-    try:
-        coef_ingresado = message.text.split(",")
-        for c in coef_ingresado: 
-            RRNH.coeff.append(-int(c))
-
-        if len(RRNH.coeff)!=RRNH.k:
-            bot.send_message(message.chat.id, f"Jum, la cantidad de números ingresados es {len(RRNH.coeff)} y el grado de la función es {RRNH.k}, deberían ser iguales, vuelve a ingresar los números 🤔")
-            bot.register_next_step_handler(message, coeficientes)
-            RRNH.coeff = []
-            check = false
+        for category, emergencies in data.items():
+            response += f"🔷 *{category}*\n"
+            for subcategory, recommendation in emergencies.items():
+                response += f"  🔹 *{subcategory}:* {recommendation}\n"
+            response += "\n"
         
-        if check: 
-            #Se llama a la funcion que realiza todos los cálculos
-            RRNH.principal_rrnh()
-        
-            #Respuestas al usuario
-            enviar_foto(message.chat.id,'function.png', "Esta es la función recurrente que ingresaste")
+        bot.send_message(message.chat.id, response, parse_mode="Markdown")
+    else:
+        recomendaciones_2(message)
 
-            enviar_foto(message.chat.id,'sol_h.png', "Esta es la solución homogénea que resulta en términos de b")
+    bot.send_message(message.chat.id, "¿Necesitas algo más? Ingrese /commands para ver los comandos disponibles, o /start.")
 
-            if(RRNH.dec_g != 4):
-                enviar_foto(message.chat.id, 'sol_p.png', "Esta es la solución particular que resulta del termino g(n)")
+def ubicacion(message):
+    bot.send_message(message.chat.id, "Gracias por tu ubicación. 📍\n¿Podrías proporcionar más detalles sobre la emergencia?")
+    bot.register_next_step_handler(message, detalles)
 
-            enviar_foto(message.chat.id,'expr.png', "Esta es la solución general de la función")
+def detalles(message):
+    bot.send_message(message.chat.id, "Gracias por la información. 📝\nUn agente de seguridad se dirigirá a tu ubicación lo más pronto posible. 🚓\nPor favor, mantente seguro y en un lugar visible")
+    recomendaciones(message)
 
-            enviar_foto(message.chat.id,'ec_sol.png', "Esta es la solución no recurrente de la función en términos de n")
+def recomendaciones_2(message):
+    global categoria
+    global subcategoria
+    with open("recommendations_structured.json", "r", encoding="utf-8") as file:
+        data = json.load(file)
 
-        #Devolver las variables a sus valores iniciales
-        RRNH.dec_g = 0
-        RRNH.k = 0
-        RRNH.g = 0
-        RRNH.R = 0
-        RRNH.coeff = []
-        RRNH.init = []
-        RRNH.funcion_p = []
-        RRNH.funcion = []
- 
-    except ValueError:
-        bot.send_message(message.chat.id, f"Hubo un error, recuerda que debes ingresar números separados por comas. Intenta de nuevo 🤔")
-        bot.register_next_step_handler(message, coeficientes)
+    response = "🛡️ *Recomendaciones* 🛡️\n\n"
+    value = data[categoria][subcategoria]
+    response += value
+
+    bot.send_message(message.chat.id, response, parse_mode="Markdown")
 
 #Funcion para enviar fotos con un mensaje
 def enviar_foto(id, src_pic, capt):
@@ -236,52 +167,9 @@ def enviar_foto(id, src_pic, capt):
     bot.send_photo(id, photo, caption=capt)
     photo.close()
 
-# Manejador para obtener las condiciones iniciales
-def pedir_condiciones(message):
-    bot.send_message(message.chat.id, "¿Cuáles son los valores de " + "".join("f(" + str(i) +"), " for i in range(RRNH.k-1)) + f" y f({RRNH.k-1})? Ingresalos separados por comas.")
-    bot.register_next_step_handler(message, condiciones_iniciales)
-
-def condiciones_iniciales(message):
-    RRNH.init = []
-    check = true
-    try:
-        condiciones = message.text.split(",")
-        for condicion in condiciones: 
-            RRNH.init.append(int(condicion))
-        if len(RRNH.init)!=RRNH.k:
-            bot.send_message(message.chat.id, f"Jum, la cantidad de números ingresados es {len(RRNH.init)} y el grado de la función es {RRNH.k}, deberían ser iguales, vuelve a ingresar los números 🤔")
-            bot.register_next_step_handler(message, condiciones_iniciales)
-            RRNH.init = []
-            check = false
-        if check: 
-            pedir_coeficientes(message)
-
-    except ValueError:
-        bot.send_message(message.chat.id, f"Hubo un error, recuerda que debes ingresar números separados por comas. Intenta de nuevo 🤔")
-        bot.register_next_step_handler(message, condiciones_iniciales)
-
-
 @bot.message_handler(func=lambda message:True)
-
 #A todo mensaje distinto de los comandos y no esperado se responde con los comandos
 def mensaje(message):
-    comandos(message)
-
-#Funcion para enviar los archivos de las constelaciones
-def enviar_archivos(id, src_pic, capt):
-    enviar_foto(id, src_pic, capt)
-    document = open('grafico.html', 'rb')
-    bot.send_document(id, document, caption="Para ver con más detalle, abre este archivo en tu navegador favorito. 🤫Tranquilo, es 100% confiable.")
-    document.close()
-
-#Funcion que llama a la funcion que genera el gráfico de las estrellas
-def grafico_estrellas(id):
-    estrellas()
-    enviar_archivos(id, "Coordenadas estrellas.png", "Aquí tienes un gráfico con todas las estrellas")
-
-#Funcion que llama a la funcion que genera los gráfico de las constelaciones
-def grafico_constelacion(conste, id):
-    constelacion(conste)
-    enviar_archivos(id, "Constelacion.png", f"Aquí tienes la constelación {conste}")
+    emergencia(message)
 
 bot.polling()
