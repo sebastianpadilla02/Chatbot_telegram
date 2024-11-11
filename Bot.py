@@ -1,5 +1,4 @@
 import telebot
-from sympy import *
 import json
 from telebot import types
 
