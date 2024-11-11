@@ -22,7 +22,7 @@ Te ayudaré a detallar tu situación y te guiaré sobre qué pasos tomar.
 🔹 **/contactos**  
 Muestra una lista de números clave, como el de la policía, líneas de atención a víctimas y otros servicios de emergencia importantes.
 
-🔹 **/red_de_apoyo**  
+🔹 **/redes_apoyo**  
 Te conecto con organizaciones y servicios locales que brindan apoyo a víctimas de inseguridad. Es ideal si necesitas ayuda adicional o más recursos.
 
 🔹 **/recomendaciones**  

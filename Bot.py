@@ -111,7 +111,7 @@ def contactos(message):
     bot.reply_to(message, contacts_list)
 
 # Manejador del comando "/red de apoyo"
-@bot.message_handler(commands=["red_de_apoyo"])
+@bot.message_handler(commands=["redes_apoyo"])
 def red_de_apoyo(message):
     apoyo_list = ""
     with open("apoyo.txt", "r", encoding="utf-8") as f:
