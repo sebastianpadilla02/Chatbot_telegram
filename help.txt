@@ -1,28 +1,37 @@
-🦸‍♀️Michito al rescate🦸
+🛡️ ¡Bienvenido al Bot de Emergencias de Seguridad! 🛡️
 
-Aquí estoy para ayudarte, mira:
+Estoy aquí para ayudarte en situaciones difíciles relacionadas con inseguridad. Aquí tienes una guía de lo que puedes hacer:
 
-*Generar estrellas y constelaciones🌟🌌:*
-Puedes ver un gráfico de todas las estrellas disponibles con el comando /estrella , se te mostrará una imagen y un archivo HTML que puedes abrir en tu navegador de confianza🙀, este contiene el mismo gráfico de la imagen, con la diferencia que es interactivo, puedes hacer zoom, moverte libremente y ver el nombre e información como identificador Henry Draper (HD), identificador Harvard Revised Number (HR) y brillo de cada estrella✨.
+---
 
-Para generar una constelacion utiliza el comando /constelaciones , luego elige uno de los comandos que se te muestran y disfruta de una experiencia como el gráfico de las estrellas, imagen y HTML. Si prefieres puedes ejecutar directamente uno de estos comandos: 
-/boyero
-/casiopea
-/cazo
-/cygnet
-/geminis
-/hydra
-/osa_mayor
-/osa_menor
-Y obtendras directamente el gráfico de una constelación directamente.
+**Comandos principales:**
 
+🔹 **/start**  
+Inicia el bot y te muestra una breve introducción sobre cómo usarlo.
 
-*Resolver una relación de recurrencia lineal, no homogénea, con coeficientes constantes 🤓:
-*Utiliza el comando /rrnh y luego responde las preguntas correspondientes a los datos del problema, lo que debes responder son números o números separados por comas (se te indicará). Dado el caso que no ingreses una respuesta válida se te seguirá preguntando hasta que respondas correctamente. 
-Luego de responder las preguntas se te mostrará la respuesta detallada a tu problema en forma de imágenes y gualá🧙‍♂️✨
+🔹 **/help**  
+Muestra esta guía con información detallada sobre cómo usar el bot y los comandos disponibles.
 
+🔹 **/commands**  
+Muestra una lista rápida de todos los comandos que puedes usar para resolver tus dudas o emergencias.
 
-Si te pierdes en algún momento y no sabes que hacer usa el comando /help y de inmediato te muestros estas instrucciones. O usa /commands para recordarte los comandos que existen😽
+🔹 **/emergencia**  
+Reporta una emergencia relacionada con inseguridad, como hurto, violencia o homicidio. También puedes activar este comando escribiendo directamente:  
+*"emergencia"*, *"sos"*, *"ayuda"* o *"necesito ayuda"*.  
+Te ayudaré a detallar tu situación y te guiaré sobre qué pasos tomar.
 
+🔹 **/contactos**  
+Muestra una lista de números clave, como el de la policía, líneas de atención a víctimas y otros servicios de emergencia importantes.
 
-_NOTA: Todos los archivos que te muestro son 100% confiables, no temas😽_
+🔹 **/red_de_apoyo**  
+Te conecto con organizaciones y servicios locales que brindan apoyo a víctimas de inseguridad. Es ideal si necesitas ayuda adicional o más recursos.
+
+🔹 **/recomendaciones**  
+Si estás pasando por una situación difícil, usa este comando para obtener consejos específicos que pueden ayudarte a manejar tu caso de la mejor manera.
+
+---
+
+✨ **¿Necesitas algo más?**  
+Si te sientes perdido, simplemente usa **/help** para volver a esta guía o escribe **/commands** para recordar qué opciones tienes disponibles.
+
+📢 ¡Recuerda! Estoy aquí para asistirte de forma rápida y segura. Tu bienestar es mi prioridad.  

@@ -1,14 +1,7 @@
 /start - Inicia el bot
-/help - Ayuda
+/help - Información sobre cómo usar el bot y los comandos disponibles.
 /commands - Mostrar los comandos disponibles
-/estrella - Mostrar todas las estrellas, tambien puedes escribir "estrella"
-/constelaciones - Mostrar las constelaciones disponibles, también puedes escribir "constelaciones"
-/boyero - Mostrar constelación Boyero
-/casiopea - Mostrar constelación Casiopea 
-/cazo - Mostrar constelación Cazo
-/cygnet - Mostrar constelación Cygnet
-/geminis - Mostrar constelación Geminis
-/hydra - Mostrar constelación Hydra
-/osa_mayor - Mostrar constelación Osa mayor
-/osa_menor - Mostrar constelación Osa menor
-/rrnh - Solucionar una relacion de recurrencia lineal, no homogénea, con coeficientes constantes
+/emergencia - Reportar una emergencia (hurto, violencia, homicidio, etc.) también puedes escribir "emergencia", "sos", "ayuda", "necesito ayuda".
+/contactos - Números y contactos de emergencia (policía, línea de atención a víctimas, etc.).
+/red_de_apoyo - Lista de organizaciones o servicios de apoyo para víctimas de inseguridad.
+/recomendaciones - Te podemos recomendar algo dependiendo por lo que estes pasando.

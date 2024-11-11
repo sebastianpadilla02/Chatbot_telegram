@@ -4,18 +4,20 @@ from estrellas import estrellas, constelacion
 import RRNH 
 
 #token del bot
-bot = telebot.TeleBot("6141107908:AAEfYAug7bei9kW80EWyvSxlb8jFc9E7kQ4")
+bot = telebot.TeleBot("8072127932:AAFDYSiwbe6whTvcREdsTYbN_A6JNVRzztM")
+tipo_de_emergencia = 0
 
 # Manejador del comando "/start"
 @bot.message_handler(commands=["start"])
 def start(message):
-    audio = open('media/bienvenido.mp3', 'rb')
-    bot.send_audio(message.chat.id, audio)
-    audio.close()
-    photo = open("media/gato-baile.gif", 'rb')
-    bot.send_animation(message.chat.id, photo)
-    photo.close()
-    bot.send_message(message.chat.id, "Miaw!👋😺, ¿cómo estás? Estos son los comandos disponibles:")
+    # audio = open('media/bienvenido.mp3', 'rb')
+    # bot.send_audio(message.chat.id, audio)
+    # audio.close()
+    # photo = open("media/gato-baile.gif", 'rb')
+    # bot.send_animation(message.chat.id, photo)
+    # photo.close()
+    bot.send_message(message.chat.id, "¡Hola! Soy tu bot de asistencia en emergencias relacionadas con inseguridad. Estoy aquí para ayudarte a actuar rápidamente en situaciones críticas. Usa /commands para ver lo que puedo hacer. Si es urgente, escribe directamente \"ayuda\" o usa el comando /emergencia.")
+    enviar_foto(message.chat.id, "media/num_policia.png", "En caso de una llamada al cuadrante mas cercano vea /contactos para mas información")
     comandos(message)
 
 # Manejador del comando "/help"
@@ -35,6 +37,40 @@ def comandos(message):
         for line in f:
             commands_list += line
     bot.reply_to(message, commands_list)
+
+# Manejador del comando "/emergencia"
+@bot.message_handler(commands=["emergencia"])
+def emergencia(message):
+    
+    bot.send_message(message.chat.id, "¡Emergencia! ¿En qué puedo ayudarte?")
+
+# Manejador del comando "/contactos"
+@bot.message_handler(commands=["contactos"])
+def contactos(message):
+    contacts_list = ""
+    with open("contactos.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            contacts_list += line
+    bot.reply_to(message, contacts_list)
+
+# Manejador del comando "/red de apoyo"
+@bot.message_handler(commands=["red_de_apoyo"])
+def red_de_apoyo(message):
+    apoyo_list = ""
+    with open("apoyo.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            apoyo_list += line
+    bot.reply_to(message, apoyo_list)
+
+# Manejador del comando "/recomendaciones"
+@bot.message_handler(commands=["recomendaciones"])
+def recomendaciones(message):
+    recomendaciones = ""
+    with open("recomendaciones.txt", "r", encoding="utf-8") as f:
+        for line in f:
+            recomendaciones += line
+    bot.reply_to(message, recomendaciones)
+
 
 # Manejador del comando "/estrella"
 @bot.message_handler(commands=["estrella"])
