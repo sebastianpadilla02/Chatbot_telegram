@@ -18,6 +18,28 @@ Este proyecto es un bot de Telegram diseñado para brindar asistencia en situaci
 - **Recomendaciones específicas**: Para cada subcategoría de emergencia, el bot proporciona pasos claros a seguir.
 - **Formato amigable**: Mensajes con texto en negrita, emojis y una estructura fácil de leer.
 
+## 🛠️ **Requisitos**
+
+- **Python 3.8+**
+- Librerías necesarias (instaladas desde `requirements.txt`):
+
+---
+
+## 📦 **Instalación**
+
+1. Clona el repositorio:
+   ```bash
+   git clone https://github.com/tu_usuario/telegram-emergency-bot.git
+   cd telegram-emergency-bot
+
+2. Instala las dependencias:
+   ```bash
+   pip install -r requirements.txt
+
+3. Ejecuta el bot en algún terminal:
+   ```bash
+   python bot.py
+
 ## 🌀 Uso
 - Iniciar el bot: Envía el comando /start para comenzar.
 - Seleccionar una emergencia: Usa los botones interactivos para navegar entre categorías y subcategorías.
