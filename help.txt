@@ -1,36 +1,36 @@
-🛡️ ¡Bienvenido al Bot de Emergencias de Seguridad! 🛡️
+🛡️ *¡Bienvenido al Bot de Emergencias de Seguridad!* 🛡️
 
 Estoy aquí para ayudarte en situaciones difíciles relacionadas con inseguridad. Aquí tienes una guía de lo que puedes hacer:
 
 ---
 
-**Comandos principales:**
+*Comandos principales:*
 
-🔹 **/start**  
+🔹 */start*  
 Inicia el bot y te muestra una breve introducción sobre cómo usarlo.
 
-🔹 **/help**  
+🔹 */help*  
 Muestra esta guía con información detallada sobre cómo usar el bot y los comandos disponibles.
 
-🔹 **/commands**  
+🔹 */commands*  
 Muestra una lista rápida de todos los comandos que puedes usar para resolver tus dudas o emergencias.
 
-🔹 **/emergencia**  
-Reporta una emergencia relacionada con inseguridad, como hurto, violencia o homicidio. También puedes activar este comando escribiendo directamente cualquier cosa:  
+🔹 */emergencia*  
+Reporta una emergencia relacionada con inseguridad, como hurto, violencia o homicidio. También puedes activar este comando escribiendo directamente cualquier cosa.  
 Te ayudaré a detallar tu situación y te guiaré sobre qué pasos tomar.
 
-🔹 **/contactos**  
+🔹 */contactos*  
 Muestra una lista de números clave, como el de la policía, líneas de atención a víctimas y otros servicios de emergencia importantes.
 
-🔹 **/redes_apoyo**  
+🔹 */redes_apoyo*  
 Te conecto con organizaciones y servicios locales que brindan apoyo a víctimas de inseguridad. Es ideal si necesitas ayuda adicional o más recursos.
 
-🔹 **/recomendaciones**  
+🔹 */recomendaciones*  
 Si estás pasando por una situación difícil, usa este comando para obtener consejos específicos que pueden ayudarte a manejar tu caso de la mejor manera.
 
 ---
 
-✨ **¿Necesitas algo más?**  
-Si te sientes perdido, simplemente usa **/help** para volver a esta guía o escribe **/commands** para recordar qué opciones tienes disponibles.
+✨ *¿Necesitas algo más?*  
+Si te sientes perdido, simplemente usa */help* para volver a esta guía o escribe */commands* para recordar qué opciones tienes disponibles.
 
-📢 ¡Recuerda! Estoy aquí para asistirte de forma rápida y segura. Tu bienestar es mi prioridad.  
+📢 *¡Recuerda!* Estoy aquí para asistirte de forma rápida y segura. Tu bienestar es mi prioridad.
