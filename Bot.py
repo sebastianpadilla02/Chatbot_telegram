@@ -26,7 +26,7 @@ def ayuda(message):
     with open("help.txt", "r", encoding="utf-8") as f:
         for line in f:
             ayuda += line
-    bot.reply_to(message, ayuda, parse_mode="Markdown")
+    bot.reply_to(message, ayuda, parse_mode="MarkdownV2")
 
 # Manejador del comando "/commands"
 @bot.message_handler(commands=["commands"])
